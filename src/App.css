@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+
+.app {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header, .app-main, .app-footer {
+  padding: 0 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app-header {
+  position: relative;
+  background-color: #66CC66;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app-title {
+  display: inline-block;
+  padding: 20px;
+}
+.app-title > a {
+  font-size: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.create-thread {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.board-title {
+  font-size: 26px;
+  width: 80%;
+  max-width: 600px;
+  margin: 10px;
+  padding: 0 .5em;
+}
+
+.thread-list {
+  width: 80%;
+  max-width: 600px;
+}
+.thread-item {  
+  background-color: #fff;
+  font-size: 24px;
+  border: 1px solid #666;
+  border-radius: 2px;
+}
+.thread-item > a {
+  display: block;
+  padding: .25em .5em;
+  min-height: 50px;
+}
+.thread-item:hover {
+  background-color: #E8E8E8;
 }
