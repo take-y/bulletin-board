@@ -5,11 +5,14 @@ import Thread from './components/Thread';
 const BulletinBoard = ({title}) => {
   const [newThreads, setNewThreads] = React.useState([]);
 
-  const getThreads = ({offset = 0}) => {
-    fetch(`https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads?offset=${offset}`)
-    .then(resp => resp.json())
-    .then(parsedResp => setNewThreads(parsedResp))
-    .catch(err => console.log(err));
+  const getThreads = async ({offset = 0}) => {
+    try {
+      const resp = await fetch(`https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads?offset=${offset}`);
+      const parsedResp = await resp.json();
+      setNewThreads(parsedResp);
+    } catch(e) {
+      console.log(e);
+    }    
   }
 
   React.useEffect(() => getThreads({offset: 0}), []);
