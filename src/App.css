@@ -1,4 +1,12 @@
 
+form {
+  display: table;
+}
+form > .form-row {
+  display: table-row;
+}
+
+/* ---------------------------------------- */
 .app {
   max-width: 1440px;
   margin: 0 auto;
@@ -33,24 +41,24 @@
 .app-main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 20px 0;
 }
 
 .board-title {
   font-size: 26px;
+  font-weight: bold;
   width: 80%;
-  max-width: 600px;
-  margin: 10px;
+  max-width: 1200px;
+  margin: 10px auto;
 }
 
 .thread-list {
   width: 80%;
-  max-width: 600px;
+  max-width: 1200px;
+  margin: auto;
 }
 .thread-item {  
-  background-color: #fff;
-  font-size: 24px;
+  background-color: #fff;  
   border: 1px solid #666;
   border-radius: 2px;
 }
@@ -58,7 +66,132 @@
   display: block;
   padding: .25em .5em;
   min-height: 50px;
+  font-size: 24px;
 }
 .thread-item:hover {
   background-color: #E8E8E8;
+}
+
+/* Createthread */
+
+.post-thread {
+  width: 80%;
+  max-width: 1200px;
+  padding: 10px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.post-thread > form {  
+  width: 100%;  
+  border-spacing: 10px;
+}
+
+.post-thread .submit-row {
+  text-align: center;
+}
+
+.post-thread .form-label {
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.post-thread input {
+  width: 100%;
+  padding: .25em .5em;
+  border: 1px solid #C8C8C8;
+}
+
+.post-thread .post-button {
+  padding: 0 30px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #00CC00;
+  border-radius: 5px;
+  border: 1px solid #CCFFCC;
+  box-shadow: 1px 1px 3px #003300;
+}
+.post-thread .post-button:hover {
+  cursor: pointer;
+}
+.post-thread .post-button:active {
+  box-shadow: 1px 1px 3px #003300 inset;
+}
+
+/* Post */
+.thread-title {
+  font-size: 26px;
+  font-weight: bold;
+  width: 80%;
+  max-width: 1200px;
+  margin: 10px 15px;
+}
+.thread-area {
+  display: flex;
+  padding: 10px;
+}
+
+.comment-list {
+  flex-basis: 55%;
+}
+
+.comment-list > .post {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.post-comment {
+  flex-basis: 45%;
+}
+
+.post-comment form {
+  position: fixed;
+  width: 40%;
+  max-width: 600px;
+  border-spacing: 20px;
+}
+
+.post-comment #post {
+  width: 100%;
+  height: calc(8em + 2px);
+  padding: .25em .5em;
+  background-color: #fff;
+  border: 1px solid #C8C8C8;
+}
+.post-comment #post::placeholder {
+  opacity: .5;
+}
+
+.post-comment .post-button {
+  width: 100%;
+  text-align: center;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #00CC00;
+  border-radius: 5px;
+  border: 1px solid #CCFFCC;
+  box-shadow: 1px 1px 3px #003300;
+}
+.post-comment .post-button:hover {
+  cursor: pointer;
+}
+.post-comment .post-button:active {
+  box-shadow: 1px 1px 3px #003300 inset;
+}
+
+@media screen and (max-width: 912px) {
+  /* Post */
+  .thread-area {
+    flex-direction: column;
+  }
+
+  .post-comment form {
+    position: relative;
+    width: 100%;
+    max-width: none;
+  }
 }
